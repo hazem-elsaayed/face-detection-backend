@@ -25,6 +25,9 @@ port = 3030;
 app.use(express.json());
 app.use(cors());
 
+//Root endpoint
+app.get('/', (req, res) => res.send(`It's working`));
+
 //Sign-in End Point
 app.post('/signin', (req, res) => {
   signin.handleSignin(req, res, db, bcrypt);
