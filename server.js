@@ -45,4 +45,6 @@ app.put('/image', (req, res) => {
   image.handleImage(req, res, db);
 });
 
-app.listen(port, () => console.log(`server is working at port ${port}`));
+app.listen(process.env.PORT || port, () =>
+  console.log(`server is working at port ${process.env.PORT}`)
+);
